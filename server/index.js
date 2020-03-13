@@ -1,10 +1,13 @@
-const express = require("express");
+const express = require('express');
+const products = require('../products.json');
 const app = express();
-const products = require("../products.json");
 
-app.get("/api/products", (req, res) => {
-  res.status(200).send(products);
+const port = 3001;
+
+app.get('/api/products', (req, res) => {
+    res.status(200).send(products)
 });
-app.listen(3001, () => {
-  console.log("Server listening 3001");
+
+app.listen(port, () => {
+    console.log(`Server listening on port: ${port}`);
 });
